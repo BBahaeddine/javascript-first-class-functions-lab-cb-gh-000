@@ -6,14 +6,10 @@ function countdown(callback) {
 }
 
 function createMultiplier(multiplierValue) {
-  return function() {
-    return multiplierValue;
+  return function(value) {
+    return multiplierValue * value;
   }
 }
 
-doubler = function (number) {
-  return createMultiplier(2) * number
-}
-tripler = function(number) {
-  return createMultiplier(3) * number
-}
+doubler = createMultiplier(2);
+tripler = createMultiplier(3);
